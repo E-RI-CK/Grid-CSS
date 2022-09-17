@@ -54,7 +54,7 @@ img {
 
 .item {
   padding: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   background-color: #666;
   border: medium solid #999;
 }
@@ -70,11 +70,38 @@ img {
   /*Grid de 4c x 5r*/
   grid-template-columns: 20% repeat(2, 30%) 20%;
   grid-template-rows: repeat(5, auto);
-  /* grid-column-gap: 1rem;
+  grid-column-gap: 1rem;
   grid-row-gap: 1rem;
-  grid-gap: 100px 0px; */
+  grid-gap: 100px 0px;
   column-gap: 4rem;
   row-gap: 2rem;
-  /*gap: row column*/
-  gap: 1vh 1vw;
+  gap: row column;
+  gap: 1vh 1vw; /*Espacio entre columnas y filas*/
+  gap: 0;
+}
+
+.grid-explicit .item:nth-child(10) {
+  color: cyan;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2/3; /*Shortcut de grid-row-start(end)*/
+  grid-column: 3/5; /*Shortcut de grid-column-start(end)*/
+  grid-area: 2/3/3/5; /*Shortcut de grid-row y grid-column en ese orden respectivamente*/
+}
+
+.grid-explicit .item:nth-child(12) {
+  color: cyan;
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.grid-explicit .item:nth-child(15) {
+  color: purple;
+  /* grid-column: 1/2;
+  grid-row: 1/4; */
+  /* grid-area: 2/4/2/4; */
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
