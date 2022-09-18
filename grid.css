@@ -264,6 +264,6 @@ img {
 }
 
 .grid-align .item:nth-child(4){
-  justify-self: start;
+  justify-self: start; /*self solo sobreescribe el valor de un determinado hijo*/
   align-self: start;
 }
