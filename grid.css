@@ -230,40 +230,79 @@ img {
   grid-template-rows: repeat(2, 1fr);
 }
 
-.grid-order .item:nth-child(1){
+.grid-order .item:nth-child(1) {
   order: 0;
 }
 
-.grid-order .item:nth-child(2){
+.grid-order .item:nth-child(2) {
   order: 2;
 }
-.grid-order .item:nth-child(3){
+.grid-order .item:nth-child(3) {
   /* order: 2; */
 }
-.grid-order .item:nth-child(4){
+.grid-order .item:nth-child(4) {
   /* order: 2; */
 }
-.grid-order .item:nth-child(5){
+.grid-order .item:nth-child(5) {
   order: -1;
 }
 
-.grid-align{
+.grid-align {
   display: grid;
   /*Grid 3c x 2r*/
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(2, 200px);
   justify-items: stretch;
   justify-items: center;
-  justify-items: start;/*Similar a justify-content(eje-X) en FlexBox*/
+  justify-items: start; /*Similar a justify-content(eje-X) en FlexBox*/
   justify-items: end;
   justify-items: center;
+
   align-items: stretch; /*Similar a align-items(eje-Y) en FlexBox*/
   align-items: start;
   align-items: center;
   align-items: end;
 }
 
-.grid-align .item:nth-child(4){
+.grid-align .item:nth-child(4) {
   justify-self: start; /*self solo sobreescribe el valor de un determinado hijo*/
   align-self: start;
+}
+
+.grid-align-tracks {
+  display: grid;
+  /*Grid 3c x 2r*/
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  /*justify-content alinea los tracks de la grid en el eje horizontal (X)*/
+  justify-content: start;
+  justify-content: end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  /*align-content alinea los tracks de la grid en el eje vertical (Y)*/
+  align-content: start;
+  align-content: end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
+.grid-min-max {
+  display: grid;
+  /*Grid de 4c x ?*/
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(100px, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, 200px));
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(max-content, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+}
+
+.grid-repeat {
+  display: grid;
+  grid-template-columns: repeat(4, 10% 20% 30% 40%);
 }
