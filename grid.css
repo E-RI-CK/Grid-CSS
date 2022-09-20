@@ -58,6 +58,11 @@ img {
   background-color: #666;
   border: medium solid #999;
 }
+.sub-item{
+  padding: 1rem;
+  border: medium solid #ccc;  
+  background-color: #ddd;
+}
 .grid-explicit {
   display: grid;
   /*Grid de 3c x 3r*/
@@ -170,7 +175,7 @@ img {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 100px);
   grid-auto-flow: row; /*flujo de la grid*/
-  grid-auto-rows: 100px; /*Determinar ancho de grid explicita*/
+  grid-auto-rows: 100px; /*Determinar ancho de grid implicita*/
   grid-auto-flow: column;
   grid-auto-columns: 50px;
 }
@@ -305,4 +310,33 @@ img {
 .grid-repeat {
   display: grid;
   grid-template-columns: repeat(4, 10% 20% 30% 40%);
+  grid-template-columns: repeat(3, 10% 20% 30% 40%);
+  grid-template-columns: repeat(1, 10% 20% 30% 40%); /*Una repetición*/
+  grid-template-rows: repeat(2, 10vh 20vh);
+  grid-auto-rows: 150px;
 }
+
+.grid-dynamics {
+  display: grid;
+  /*Grid de 4cx?r*/
+  grid-template-columns: repeat(4, 100px);
+  /*auto-fill rellena la grid con tracks generado dinámicamente*/
+  grid-template-columns: repeat(auto-fill, 100px);
+  /*auto-fill ajusta la grid con tracks generado dinámicamente*/
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1vh 1vw;
+}
+
+.grid-nested {
+  display: grid;
+  /*Grid 3cx?r*/
+  grid-template-columns: repeat(3, 1fr);
+}
+
