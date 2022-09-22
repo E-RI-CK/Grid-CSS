@@ -242,12 +242,12 @@ img {
 .grid-order .item:nth-child(2) {
   order: 2;
 }
-.grid-order .item:nth-child(3) {
-  /* order: 2; */
+/* .grid-order .item:nth-child(3) {
+   order: 2; 
 }
 .grid-order .item:nth-child(4) {
-  /* order: 2; */
-}
+   order: 2; 
+} */
 .grid-order .item:nth-child(5) {
   order: -1;
 }
